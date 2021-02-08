@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Epicture.SearchPage"
+             Title="SearchPage"
+             BackgroundColor="#2B2B2B">
+    <StackLayout>
+        <SearchBar x:Name="BrowseImage"
+                   Placeholder="Search"
+                   BackgroundColor="LightGray"
+                   TextColor="Black"
+                   SearchButtonPressed="SearchComm"/>
+        <Grid VerticalOptions="CenterAndExpand">
+            <ScrollView>
+                <FlexLayout x:Name="flexLayout"
+                            Wrap="Wrap"
+                            JustifyContent="SpaceAround" />
+            </ScrollView>
+            <ActivityIndicator x:Name="activityIndicator"
+                               IsRunning="True"
+                               VerticalOptions="Center" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

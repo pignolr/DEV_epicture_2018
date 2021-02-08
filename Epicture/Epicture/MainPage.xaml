@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:Epicture"
+            x:Class="Epicture.MainPage"
+            BarBackgroundColor="#2DDA9B"
+            BarTextColor="White">
+
+    <local:SearchPage>
+    </local:SearchPage>
+    <ContentPage Title="User"
+                 BackgroundColor="#2B2B2B">
+        <StackLayout>
+            <Label></Label>
+            <Label x:Name="Welcome"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Start" />
+            <Button x:Name="LoginButton"
+                    Text="Log In"
+                    Clicked="LoginButton_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"></Button>
+            <Grid VerticalOptions="CenterAndExpand">
+                <ScrollView>
+                    <FlexLayout x:Name="UserGallery"
+                            Wrap="Wrap"
+                            JustifyContent="SpaceAround" />
+                </ScrollView>
+                <ActivityIndicator x:Name="activityUserGallery"
+                                   IsRunning="false"
+                                   IsVisible ="false"
+                                   VerticalOptions="Center" />
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="UploadImage"
+                        Image="plus.png"
+                        BackgroundColor="#2DDA9B"
+                        Clicked="UploadImage_Clicked">
+                </Button>
+
+                <Button x:Name="LogoutButton"
+                        Text="Log out"
+                        Clicked="LogoutButton_Clicked"
+                        HorizontalOptions="End">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Favorites" x:Name="FavoritesTab"
+                 BackgroundColor="#2B2B2B">
+        <StackLayout>
+            <Label></Label>
+            <Label x:Name="FavoritesWelcome"
+                   Text="Your Favorites"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Start" />
+            <Grid VerticalOptions="CenterAndExpand"
+                  BackgroundColor="#2B2B2B">
+                <ScrollView>
+                    <FlexLayout x:Name="UserFavorites"
+                            Wrap="Wrap"
+                            JustifyContent="SpaceAround" />
+                </ScrollView>
+                <ActivityIndicator x:Name="activityUserFavorites"
+                                   IsRunning="false"
+                                   IsVisible ="false"
+                                   VerticalOptions="Center" />
+            </Grid>
+            <Button x:Name="ReloadFavorites"
+                    Image="reload.png"
+                    BackgroundColor="White"
+                    Clicked="ReloadFavorites_Clicked"
+                    HorizontalOptions="Center"></Button>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>
